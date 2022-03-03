@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devPortfolio</title>
+      <!-- google fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <section id="header" class="container header">
+
+        <div id="myNav" class="overlay">
+            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+            <div class="overlay-content">
+            <div class="second-section">
+              <a href="#">About</a>
+              <a href="#">Careers</a>
+              <a href="#">Blog</a>
+              <a href="#">Resources</a>
+              <a href="#">Product</a>
+              <a href="#">Claims</a>
+              <a href="#">Loyalty </a>
+              <a href="#">Say Hello</a>
+            </div>
+           </div> 
+          </div>
+
+        <div><span id="logo" class="logo">Tushar Jadhav</span></div>
+          <div id="menu" class="menu">
+              <div id="header-btn" class="header-btn">
+                  <span>
+                    <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.8107 1.66995L18.5099 17.2364C18.2609 18.335 17.6115 18.6084 16.6887 18.0908L11.6594 14.3848L9.2326 16.7188C8.96405 16.9873 8.73944 17.2119 8.22186 17.2119L8.58319 12.0899L17.9045 3.66702C18.3097 3.30569 17.8166 3.1055 17.2746 3.46683L5.75116 10.7227L0.790218 9.16995C-0.288883 8.83304 -0.308415 8.09085 1.01483 7.57327L20.4191 0.0976854C21.3176 -0.239229 22.1037 0.297881 21.8107 1.66995Z" fill="black"/>
+                        </svg>                        
+                  </span>
+                  <span class="txtmenu">@HeyyTJ</span>
+              </div>             
+                <div class="menu-icon" id="menu-icon">
+                    <div>
+                      <span class="line-1"></span>
+                      <span class="line-2"></span>
+                      <span class="line-3"></span>
+                    </div>
+                </div>
+            
+
+          </div>
+    </section>
+     <section  id="hero" class="container">
+         <div class="row">
+                <div class="col-6">
+                              <h1>Helping Business 
+                                with creative solutions</h1>
+                              <p>After completing my engineering degree in Software field, I have been working with brands around the world for their creative needs. </p>
+                              <div class="row">
+                                  <div class="col-8"><a href="">WHAT I CAN HELP YOU WITH</a></div>
+                                  <div class="col-4"><a href="">LET’S TALK</a></div>
+                              </div> 
+                              <div class="row">
+                                <div class="col-3"><span>14+ <br> YEARS OF EXPERIENCE</span></div>
+                                <div class="col-2"><span>65+ <br> TEAM COLLABORATION </span></div>
+                            </div> 
+
+                </div>
+                <div class="col-6">
+                   <img src="images/Rectangle 37.svg" alt="hero images" class="img-fluid" >           
+                </div>
+         </div> 
+
+     </section>
+
+
+
+    <script>
+        var menu=document.getElementById("menu-icon"); 
+      
+   //var eclipse=document.getElementById("eclipse"); 
+  
+  
+   menu.onclick=function(){
+       console.log(menu.classList);
+       console.log("menu-icon"+menu.classList.contains("menu-icon"));
+       //  menu.classList.toggle("openmenu");
+       //  document.getElementById("myNav").style.height = "100%";
+       
+       if(menu.classList.contains("openmenu")){
+           menu.classList.toggle("openmenu");          
+         document.getElementById("myNav").style.width = "0%";       
+
+        }else{                  
+            menu.classList.toggle("openmenu");                                     
+                                               
+            document.getElementById("myNav").style.width = "40%";
+       }
+       
+   }
+    </script>
+</body>
+</html>
