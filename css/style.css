@@ -140,6 +140,66 @@ body{
     text-align:start;
 
 }
+
+.herorow{
+    margin-top: 5rem;
+    align-items: center;
+}
+
 h1{
-    font-size: ;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 4.375rem;
+    font-weight: 800;
+    letter-spacing:-0.370rem;
+}
+
+.subheading{
+    color: #000;
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+}
+
+.btnblack{
+    margin-left: 0.875rem;
+    display: flex;
+    justify-content: center; 
+    padding: 1rem;
+    align-items: center;
+    color: #ffffff;
+    background-color: #000;
+}
+
+.btnblue{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin-left: 1rem;
+    align-items: center;
+   color: #ffffff;
+   background-color:#0057FF;
+}
+
+
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size:1.125rem ;
+   font-weight: 500;
+    
+}
+
+.txtnodsp{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.txtexp{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    
 }
