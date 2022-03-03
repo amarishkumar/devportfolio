@@ -4,6 +4,11 @@
     --btn-green-color:#15A800;
     --btn-header-color:#ffffff;     
 }
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     font-family:'Inter', sans-serif;
 }
@@ -181,8 +186,6 @@ h1{
    background-color:#0057FF;
 }
 
-
-
 a{
     color: #ffffff;
     text-decoration: none;
@@ -202,4 +205,19 @@ a{
     font-weight: bold;
     color: #000;
     
+}
+
+.demo{    
+    margin-left: 15%;
+}
+.txtheading{
+font-size: 0.875rem;
+font-weight: 500;
+letter-spacing: 0.25em;
+opacity: 0.5;
+color: #000;
+}
+
+.techlist{
+
 }
