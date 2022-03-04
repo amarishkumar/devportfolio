@@ -218,6 +218,39 @@ opacity: 0.5;
 color: #000;
 }
 
-.techlist{
+.featurelist{
+font-style: normal;
+font-weight: bold;
+font-size: 3rem;
+line-height: 5rem;
+letter-spacing: -0.05em;
+color: #000;
 
+}
+
+.techlist{
+font-style: normal;
+font-weight: bold;
+font-size: 0.875rem;
+line-height: 2.188rem;
+letter-spacing: 0.25em;
+color: #ffffff;
+}
+
+.featurelist{
+
+display: flex;
+flex-direction: column;
+flex-basis: 35%;
+}
+
+.techcolmn{
+display: flex;
+flex-direction: column;
+flex-basis: 50%;
+background-color: #000;
+}
+
+.rowmargin{
+    margin-left: 15%;
 }
