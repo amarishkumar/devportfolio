@@ -4,7 +4,8 @@
     --primary-colors:#000;
     --btn-blue-color:#0057FF;
     --btn-green-color:#15A800;
-    --btn-header-color:#ffffff;     
+    --btn-header-color:#ffffff;
+   
 }
 *{
     margin: 0;
@@ -223,6 +224,7 @@ color: #000;
 }
 
 .featurelist{
+/* margin-left: calc((100vw - 100%) / -2); */
 font-style: normal;
 font-weight: bold;
 font-size: 3rem;
@@ -241,18 +243,24 @@ letter-spacing: 0.25em;
 color: #ffffff;
 }
 
-.featurelist{
-
+.featurecolmn{
 display: flex;
 flex-direction: column;
-flex-basis: 50%;
+justify-content: flex-start;
+
 }
 
 .techcolmn{
+background-color: #000;
 display: flex;
 flex-direction: column;
-flex-basis: 50%;
 
+}
+
+.testimonial{
+    background-color: #000;
+    display: flex;
+    flex-direction: column; 
 }
 
 .rowmargin{
@@ -322,4 +330,44 @@ flex-basis: 50%;
     line-height: 1.5rem;
     font-weight: bold;
 
+}
+
+.toppadding{
+    padding-top: 5rem;
+}
+
+.topmargin{
+    margin-top: 5rem;
+}
+
+.txttitle{
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    opacity: 0.5;
+    color: #000;
+    line-height:2.1875 ;
+}
+
+.pera{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #000;
+}
+
+.peralang{
+    font-weight: 500;
+    font-size: 00.75rem;
+    line-height: 1.5rem;
+    color: #000;
+    opacity: 0.5;
+}
+
+.workdetail{
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: center;
 }
