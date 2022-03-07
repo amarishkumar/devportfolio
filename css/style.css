@@ -275,7 +275,11 @@ flex-direction: column;
         #000000 50%, 
         #000000 100%
       );
+
 }
+
+
+
 .techsubheading{
     font-size: 0.875rem;
     font-weight: 500;
@@ -366,8 +370,7 @@ flex-direction: column;
 }
 
 .workdetail{
-    display: flex;
-  
+    display: flex;  
     flex-direction: column;
     justify-content: center;
 }
@@ -426,3 +429,20 @@ flex-direction: column;
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+.resetpadding{
+    padding-left: 0;
+    padding-right: 0;
+}
+@media only screen and (max-width: 767px) {
+    .custombg{
+        background:linear-gradient(
+            to bottom, 
+            #ffffff 0%, 
+            #ffffff 50%, 
+            #000000 50%, 
+            #000000 100%
+          );
+          
+    }
+}  
