@@ -59,16 +59,16 @@
      <section  id="hero" class="container mb-5 resetpadding">
          <div class="row herorow">
                 <div class="col-md-6">
-                              <h1>Helping Business 
+                              <h1 class="heroanim">Helping Business 
                                 with creative solutions</h1>
-                              <p class="subheading mt-4 mb-4">After completing my engineering degree in Software field, I have been working with brands around the world for their creative needs. </p>
-                              <div class="row flex-nowrap">
+                              <p class="subheading mt-4 mb-4 heroanim">After completing my engineering degree in Software field, I have been working with brands around the world for their creative needs. </p>
+                              <div class="row flex-nowrap heroanim">
                                   <div class="col-7 btnblack"><a href="#">WHAT I CAN HELP YOU WITH</a></div>
                                   <div class="col-4 btnblue"><a href="#">LET’S TALK</a></div>
                               </div> 
-                              <div class="row mt-5">
-                                <div class="col-3"><span class="txtnodsp" >14+</span> <br><span class="txtexp">YEARS OF EXPERIENCE</span></div>
-                                <div class="col-2"><span class="txtnodsp" >65+</span> <br><span class="txtexp" >TEAM COLLABORATION </span></div>
+                              <div class="row mt-5 hero-number">
+                                <div class="col-3 heroanim"><span class="txtnodsp" >14+</span> <br><span class="txtexp">YEARS OF EXPERIENCE</span></div>
+                                <div class="col-2 heroanim"><span class="txtnodsp" >65+</span> <br><span class="txtexp" >TEAM COLLABORATION </span></div>
                             </div> 
                 </div>
                 <div class="col-6 d-flex justify-content-end">
@@ -85,12 +85,12 @@
                   <div class="row">
                         <div class="col featurecolmn"> 
                           <h5 class="contact-heading">WHAT I CAN HELP YOU WITH</h5>
-                          <p class="featurelist">User Interface <br>
-                           User Experience <br>
-                           Website Development<br>
-                           WordPress Development<br>
-                           Mobile App Development<br>
-                           Search Engine Optimization
+                          <p class="featurelist"><span class="heroanim">User Interface </span><br>
+                            <span class="heroanim">User Experience </span><br>
+                            <span class="heroanim"> Website Development</span><br>
+                            <span class="heroanim">WordPress Development</span><br>
+                            <span class="heroanim">Mobile App Development</span><br>
+                            <span class="heroanim">Search Engine Optimization</span>
                            </p> </div>
                         <div class="col techcolmn">
                           <h5 class="techlist px-5">TECHNOLOGIES I LOVE</h5>
@@ -244,12 +244,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> 
   <script src="scripts/main.js"></script>
     <script>
-        var menu=document.getElementById("menu-icon"); 
-      
-   //var eclipse=document.getElementById("eclipse"); 
+       
+       let b="background:linear-gradient(to right,#ffffff 0%,#ffffff 50%,#ffffff 50%,#ffffff 100% );";
+       let b2="background:linear-gradient(to right,#000000 0%,#000000 50%,#ffffff 50%,#ffffff 100% );";
+       
+       gsap.from('.heroanim',{opacity:0,duration:1,y:-50,stagger:0.2});
+       gsap.from('.contact-heading',{opacity:0,duration:1,y:-50,stagger:0.2});
+       gsap.from('.custombg',{opacity:1,duration:1,backgroundPosition:'-150px 0px', ease:Power0.easeNone});
+       
+     
+
+      var menu=document.getElementById("menu-icon"); 
+         //var eclipse=document.getElementById("eclipse"); 
        let t1=gsap.timeline({paused:true});
-       t1.to(".overlay",{opacity:1,durattion:1,stagger:0.1,right:0});
-       t1.to(".nav",{opacity:1,durattion:1,stagger:0.1,marginTop:0});
+       t1.to(".overlay",{opacity:1,duration:1,stagger:0.1,right:0});
+       t1.to(".nav",{opacity:1,duration:1,stagger:0.1,marginTop:0});
        
 
   
@@ -263,8 +272,7 @@
         // document.getElementById("myNav").style.width = "0%";       
           t1.reverse();
           menu.classList.toggle("openmenu"); 
-        }else{     
-                                                          
+        }else{                                                               
             //document.getElementById("myNav").style.width = "40%";            
             t1.play().timeScale(1);
             menu.classList.toggle("openmenu");
