@@ -15,23 +15,25 @@
 
 </head>
 <body>
-    <section id="header" class="container header">
+    <section id="header" class="container header resetpadding">
 
         <div id="myNav" class="overlay">
             <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-            <div class="overlay-content">
-            <div class="second-section">
-              <a href="#">About</a>
-              <a href="#">Careers</a>
-              <a href="#">Blog</a>
-              <a href="#">Resources</a>
-              <a href="#">Product</a>
-              <a href="#">Claims</a>
-              <a href="#">Loyalty </a>
-              <a href="#">Say Hello</a>
-            </div>
+            <div class="menu-container">
+           
+              <ul class="nav-list">
+                <li class="nav"><a class="nav-link" href="#">About</a></li>
+                <li class="nav"><a class="nav-link" href="#">Careers</a></li>
+                <li class="nav"><a class="nav-link" href="#">Blog</a></li>
+                <li class="nav"><a class="nav-link" href="#">Resources</a></li>
+                <li class="nav"><a class="nav-link" href="#">claims</a></li>
+                <li class="nav"><a class="nav-link" href="#">Loyalty</a></li>
+                <li class="nav"><a class="nav-link" href="#">Say Hello</a></li>          
+              </ul>
+
+
            </div> 
-          </div>
+        </div>
                                          
         <div><span id="logo" class="logo">Tushar Jadhav</span></div>
           <div id="menu" class="menu">
@@ -74,40 +76,7 @@
                 </div>
          </div> 
      </section>
-     
-     <!-- <section id="container" class="container-fluid">
-       <div class="row justify-content-end">
-            <div class=" featurecolmn col-lg-4">
-             <h5 class="contact-heading">WHAT I CAN HELP YOU WITH</h5>
-              <p class="featurelist">User Interface <br>
-               User Experience <br>
-               Website Development<br>
-               WordPress Development<br>
-               Mobile App Development<br>
-               Search Engine Optimization
-               </p>       
-            </div>
-           <div class="col-lg-6 techcolmn px-5">
-            <h5 class="techlist px-5">TECHNOLOGIES I LOVE</h5>
-             <div>
-                 <h6><code class="techsubheading px-5"> &lt;FRONTEND/&gt; </code></h6>
-                 <p>Html, Css, jQuery,  Javascript,  <br> React JS</p>
-             </div>
-             <div>
-              <h6><code class="techsubheading px-5">()=>{BACKEND;}</code></h6>
-              <p>Node JS, Express JS, PHP, Yii2,<br> WordPress, MongoDB, MySQL,<br> PostgreSQL</p>
-             </div>
-             <div>
-              <h6 class="techsubheading px-5">MOBILE APP</h6>
-              <p>React Native</p>
-             </div>
-      
-            </div>
-       </div>
-         
-    </section>   
-  -->
-
+    
         <!-- skills -->
         <section id="mainsection" class="container-fluid custombg">
           <div class="row">
@@ -272,12 +241,17 @@
   </section>
 
 
-       
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> 
+  <script src="scripts/main.js"></script>
     <script>
         var menu=document.getElementById("menu-icon"); 
       
    //var eclipse=document.getElementById("eclipse"); 
-  
+       let t1=gsap.timeline({paused:true});
+       t1.to(".overlay",{opacity:1,durattion:1,stagger:0.1,right:0});
+       t1.to(".nav",{opacity:1,durattion:1,stagger:0.1,marginTop:0});
+       
+
   
    menu.onclick=function(){
        console.log(menu.classList);
@@ -285,14 +259,15 @@
        //  menu.classList.toggle("openmenu");
        //  document.getElementById("myNav").style.height = "100%";
        
-       if(menu.classList.contains("openmenu")){
-           menu.classList.toggle("openmenu");          
-         document.getElementById("myNav").style.width = "0%";       
-
-        }else{                  
-            menu.classList.toggle("openmenu");             
-                                               
-            document.getElementById("myNav").style.width = "40%";
+       if(menu.classList.contains("openmenu")){                   
+        // document.getElementById("myNav").style.width = "0%";       
+          t1.reverse();
+          menu.classList.toggle("openmenu"); 
+        }else{     
+                                                          
+            //document.getElementById("myNav").style.width = "40%";            
+            t1.play().timeScale(1);
+            menu.classList.toggle("openmenu");
        }
        
    }
