@@ -14,6 +14,7 @@
 
 body{
     font-family:'Inter', sans-serif;
+   
 }
 
 .logo{
@@ -49,8 +50,6 @@ body{
     line-height: 1em;
 
 }
-
-
 .menu{
     display: flex;
     align-items: center;
@@ -59,29 +58,30 @@ body{
 
 /* overlay menu */
 .overlay {
-    height: 100%;
-    width:0;
+    opacity: 0;
+    height:100%;
+    width:40%;
     position: fixed;
     z-index: 1;
     top: 0;
-    right: 25px;;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
+    right: -100%;
+    background-color: rgb(0,0,0);   
     overflow-x: hidden;
     overflow-y: hidden;
-    transition: 0.5s;
+    transition: 0.1s ease;
     overflow:none;
   }
   
-  .overlay-content {
+  .menu-container{
     position: relative;
     display: flex;
     flex-direction: row;
     top: 10%;
     width: 100%;
-    justify-content: center;
+    height: 100vh;
+    justify-content: flex-start;
     text-align: center;
-    margin-top: 30px;
+   
   }
 
 
@@ -108,14 +108,16 @@ body{
     background: black;
     border-radius: 4rem;
     transform: translate(-50%,-50%);
-    transition: 0.5s ,width 0.5s;
+    transition: 0.5s,width 0.5s;
 }
 
 .menu-icon .line-1 {
+    
     transform: translate(-50%,-10px);
 }
 
 .menu-icon .line-3 {
+   
     width: 50%;
     transform: translate(0,7px);
 }
@@ -126,14 +128,14 @@ body{
 }
 
 .openmenu .line-2{   
-    background: white;
-   transform: translate(-50%,-50%) rotate(45deg);
+    background: white;   
+    transform: translate(-50%,-50%) rotate(45deg);
 }
  
 .openmenu .line-3{ 
-    background: white;
-   transform:  translate(-50%,15px);  
-   width: 80%;
+    background: white;   
+    transform:  translate(-50%,15px);  
+    width: 80%;
 }
 
 .second-section{
@@ -158,9 +160,11 @@ h1{
     margin: 0;
     padding: 0;
     color: #000;
-    font-size: 4.375rem;
+    /* font-size: 4.375rem; */
+    font-size: calc(1.5rem + 2.5vw);
     font-weight: 800;
-    letter-spacing:-0.370rem;
+    letter-spacing:-0.05rem;
+     line-height: calc()5rem;
 }
 
 .subheading{
@@ -517,4 +521,22 @@ text-align: left;
     position: absolute;
     transform: translate(-110px,-45px);
 
+}
+
+.nav{
+    margin-top: -20px;
+    opacity: 0;
+
+}
+.nav a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-link{
+    font-size: calc(1.5rem + 1.5vw);
+    transition: all 0.1s ease-in-out;
+}
+.nav-link:hover{
+    color:darkgray;
 }
