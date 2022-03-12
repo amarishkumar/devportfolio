@@ -32,13 +32,17 @@ body{
 
 .header-btn{
     height: 40px;
-    width: 160px;
     padding: 0.5rem;
-    display: inline;       
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+    align-items: center;    
     border: 2px solid #000;
     border-radius: 50px;
     cursor: pointer;
     text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
    
 }
 
