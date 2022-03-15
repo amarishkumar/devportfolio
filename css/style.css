@@ -543,7 +543,6 @@ text-align: left;
 .nav-link:hover{
     color:darkgray;
 }
-
 .heroleft{
    animation:moveDown 1s ease-in-out forwards;
    opacity: 0;
@@ -559,3 +558,6 @@ text-align: left;
     }
 }
 
+.expplus,.teamplus,.percent,.wordplus,.pluginplus{
+    opacity: 0;
+}

@@ -65,8 +65,8 @@
                                   <div class="col-4 btnblue"><a href="#">LET’S TALK</a></div>
                             </div> 
                             <div class="row mt-5 hero-number">
-                                <div class="col-3 heroanim"><span class="txtnodsp" >14+</span> <br><span class="txtexp">YEARS OF EXPERIENCE</span></div>
-                                <div class="col-2 heroanim"><span class="txtnodsp" >65+</span> <br><span class="txtexp" >TEAM COLLABORATION </span></div>
+                                <div class="col-3 heroanim"><span  class="txtnodsp"><span id="exp"></span><span class="expplus">+</span></span> <br><span class="txtexp">YEARS OF EXPERIENCE</span></div>
+                                <div class="col-2 heroanim"><span  class="txtnodsp"><span id="team"></span><span class="teamplus">+</span></span> <br><span class="txtexp" >TEAM COLLABORATION </span></div>
                             </div> 
                 </div>
                 <div class="col-6 d-flex justify-content-end">
@@ -178,8 +178,7 @@
                              together at in the future and would definitely
                              recommend him to colleagues and fellow
                              project managers. Thanks so much!"
-                          </p>
-                        
+                          </p>                        
                           <!-- Client review stars -->
                           <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
                           <p class="review py-2">                           
@@ -195,20 +194,18 @@
                     </div>
               <div class="col-md-5">
                 <div class="row"> 
-                  <div class="col-4"> <span class="txtnodsp" >100%</span> <br><span class="txtexp">JOB SUCCESS UPWORK.COM</span></div>
-                  <div class="col-4"> <span class="txtnodsp" >110+</span> <br><span class="txtexp">WORDPRESS THEMES</span></div>
+                  <div class="col-4"> <span id="percent" class="txtnodsp"><span class="percent">%</span></span> <br><span class="txtexp">JOB SUCCESS UPWORK.COM</span></div>
+                  <div class="col-4"> <span id="wordplus" class="txtnodsp"><span class="wordplus">+</span></span> <br><span class="txtexp">WORDPRESS THEMES</span></div>
                  </div>                          
                  <div class="row mt-5">
-                  <div class="col-4"><span class="txtnodsp" >15+</span> <br><span class="txtexp">WORDPRESS <br> PLUGINS</span></div>
-                  <div class="col-4"><span class="txtnodsp" >8</span> <br><span class="txtexp">MOBILE <br>APPS</span></div>
+                  <div class="col-4"><span id="pluginplus" class="txtnodsp"><span class="pluginplus">+</span></span> <br><span class="txtexp">WORDPRESS <br> PLUGINS</span></div>
+                  <div class="col-4"><span id="mobile_app" class="txtnodsp" ></span> <br><span class="txtexp">MOBILE <br>APPS</span></div>
                  </div>
               </div>
           </div>
           </div>
       </div>
-
   </section>
-
 
 
 
@@ -243,7 +240,47 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script> 
   <script src="scripts/main.js"></script>
     <script>
-       
+      let expNum =document.querySelector("#exp");
+      let teamNum =document.querySelector("#team");
+      let percent =document.querySelector("#percent");
+      let wordplus=document.querySelector("#wordplus");
+      let pluginplus =document.querySelector("#pluginplus");
+      let mobile_app =document.querySelector("#mobile_app");
+ 
+
+       gsap.to(expNum,{innerText:14,duration:1,delay:1,snap:"innerText",onComplete: function(){
+        //expNum.innerText +="+";
+          gsap.to('.expplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
+        }});
+       gsap.to(teamNum,{innerText:65,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        //expNum.innerText +="+";
+          gsap.to('.teamplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
+        }});
+
+        gsap.to(percent,{innerText:100,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        //expNum.innerText +="+";
+        console.log("percent");
+           gsap.to('.percent',{opacity:1,duration:1,stagger:0.1})  
+        }});
+
+
+        gsap.to(wordplus,{innerText:110,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        //expNum.innerText +="+";
+           gsap.to('.wordplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
+        }});
+
+
+        gsap.to(pluginplus,{innerText:15,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        //expNum.innerText +="+";
+           gsap.to('.pluginplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
+        }});
+        gsap.to(mobile_app,{innerText:8,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        //expNum.innerText +="+";
+          // gsap.to('.teamplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
+        }});
+
+
+
        let b="background:linear-gradient(to right,#ffffff 0%,#ffffff 50%,#ffffff 50%,#ffffff 100% );";
        let b2="background:linear-gradient(to right,#000000 0%,#000000 50%,#ffffff 50%,#ffffff 100% );";
        
@@ -252,11 +289,11 @@
        gsap.from('.custombg',{opacity:1,duration:0.5,backgroundPosition:'-150px 0px', ease:Power0.easeNone});
       //  gsap.from('.techanim',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
      
-       gsap.from('.animfashion',{opacity:1,duration:1,x:-150, ease:Power0.easeNone});
-       gsap.from('.animwork',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
+      //  gsap.from('.animfashion',{opacity:1,duration:1,x:-150, ease:Power0.easeNone});
+      //  gsap.from('.animwork',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
      
-       gsap.from('.animfree',{opacity:1,duration:1,x:-150, ease:Power0.easeNone});
-       gsap.from('.animfreedetail',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
+      //  gsap.from('.animfree',{opacity:1,duration:1,x:-150, ease:Power0.easeNone});
+      //  gsap.from('.animfreedetail',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
      
 
       var menu=document.getElementById("menu-icon"); 
@@ -272,7 +309,37 @@
        });
        y2.from('.techanim',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
 
-  
+       let y3=gsap.timeline({
+         scrollTrigger:{
+           trigger:'.animfree'
+         }
+       });
+       y3.from('.animfree',{opacity:0,duration:1,x:-150, stagger:{each:0.2}});
+      
+       let y4=gsap.timeline({
+         scrollTrigger:{
+           trigger:'.animfreedetail'
+         }
+       });
+       y4.from('.animfreedetail',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
+
+       let y5=gsap.timeline({
+         scrollTrigger:{
+           trigger:'.animfashion'
+         }
+       });
+       y5.from('.animfashion',{opacity:0,duration:1,x:-150, stagger:{each:0.2}});
+      
+       let y6=gsap.timeline({
+         scrollTrigger:{
+           trigger:'.animwork'
+         }
+       });
+       y6.from('.animwork',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
+
+
+
+
    menu.onclick=function(){
        console.log(menu.classList);
        console.log("menu-icon"+menu.classList.contains("menu-icon"));
