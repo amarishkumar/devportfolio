@@ -194,11 +194,11 @@
                     </div>
               <div class="col-md-5">
                 <div class="row"> 
-                  <div class="col-4"> <span id="percent" class="txtnodsp"><span class="percent">%</span></span> <br><span class="txtexp">JOB SUCCESS UPWORK.COM</span></div>
-                  <div class="col-4"> <span id="wordplus" class="txtnodsp"><span class="wordplus">+</span></span> <br><span class="txtexp">WORDPRESS THEMES</span></div>
+                  <div class="col-4 "> <span id="percent" class="txtnodsp"></span><span class="percent txtnodsp">%</span><br><span class="txtexp">JOB SUCCESS UPWORK.COM</span></div>
+                  <div class="col-4"> <span id="wordplus" class="txtnodsp"></span> <span class="wordplus txtnodsp">+</span><br><span class="txtexp">WORDPRESS THEMES</span></div>
                  </div>                          
                  <div class="row mt-5">
-                  <div class="col-4"><span id="pluginplus" class="txtnodsp"><span class="pluginplus">+</span></span> <br><span class="txtexp">WORDPRESS <br> PLUGINS</span></div>
+                  <div class="col-4"><span id="pluginplus" class="txtnodsp"></span><span class="pluginplus txtnodsp">+</span><br><span class="txtexp">WORDPRESS <br> PLUGINS</span></div>
                   <div class="col-4"><span id="mobile_app" class="txtnodsp" ></span> <br><span class="txtexp">MOBILE <br>APPS</span></div>
                  </div>
               </div>
@@ -248,36 +248,48 @@
       let mobile_app =document.querySelector("#mobile_app");
  
 
-       gsap.to(expNum,{innerText:14,duration:1,delay:1,snap:"innerText",onComplete: function(){
+
+       gsap.to(expNum,{innerText:14,duration:1,delay:.2,snap:"innerText",onComplete: function(){
         //expNum.innerText +="+";
           gsap.to('.expplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
-        }});
-       gsap.to(teamNum,{innerText:65,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        },scrollTrigger:'.hero-number'});
+
+       gsap.to(teamNum,{innerText:65,duration:1,delay:.2,snap:"innerText" ,onComplete: function(){
         //expNum.innerText +="+";
           gsap.to('.teamplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
-        }});
+        },scrollTrigger:'.hero-number'});
+       
+      //  gsap.to(expNum,{innerText:14,duration:1,delay:1,snap:"innerText",onComplete: function(){
+      //   //expNum.innerText +="+";
+      //     gsap.to('.expplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
+      //   }});
 
-        gsap.to(percent,{innerText:100,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+      //  gsap.to(teamNum,{innerText:65,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+      //   //expNum.innerText +="+";
+      //     gsap.to('.teamplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
+      //   }});
+
+        gsap.to(percent,{innerText:100,duration:1,snap:"innerText" ,onComplete: function(){
         //expNum.innerText +="+";
         console.log("percent");
            gsap.to('.percent',{opacity:1,duration:1,stagger:0.1})  
-        }});
+        },scrollTrigger:'#reviewsection'});
 
 
-        gsap.to(wordplus,{innerText:110,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        gsap.to(wordplus,{innerText:110,duration:1,snap:"innerText" ,onComplete: function(){
         //expNum.innerText +="+";
            gsap.to('.wordplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
-        }});
+        },scrollTrigger:'#reviewsection'});
 
 
-        gsap.to(pluginplus,{innerText:15,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        gsap.to(pluginplus,{innerText:15,duration:1,snap:"innerText" ,onComplete: function(){
         //expNum.innerText +="+";
            gsap.to('.pluginplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
-        }});
-        gsap.to(mobile_app,{innerText:8,duration:1,delay:1,snap:"innerText" ,onComplete: function(){
+        },scrollTrigger:'#reviewsection'});
+        gsap.to(mobile_app,{innerText:8,duration:1,snap:"innerText" ,onComplete: function(){
         //expNum.innerText +="+";
           // gsap.to('.teamplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
-        }});
+        },scrollTrigger:'#reviewsection'});
 
 
 
