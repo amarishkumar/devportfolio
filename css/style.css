@@ -402,6 +402,14 @@ justify-content: flex-start;
     color: #000;
     opacity: 0.5;
 }
+.skill-heading{
+    font-size: 0.875rem;
+    font-weight:700;
+    line-height: 2.188rem;
+    letter-spacing: 0.25em;
+    color: #000;
+    opacity: 0.5;
+}
 
 .title{
     font-size:1.875rem ;
