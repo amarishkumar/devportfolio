@@ -24,11 +24,16 @@ body{
 }
 
 .header{
-    margin-top: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-     align-items: center;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
 }
+
+.custommrg {    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;  
+   }
 
 .header-btn{
     height: 40px;
@@ -43,6 +48,7 @@ body{
     text-align: center;
     padding-left: 1rem;
     padding-right: 1rem;
+    z-index: 2;
    
 }
 
@@ -58,6 +64,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
+   
 }
 
 /* overlay menu */
@@ -66,7 +74,6 @@ body{
     height:100%;
     width:40%;
     position: fixed;
-    z-index: 1;
     top: 0;
     right: -100%;
     background-color: rgb(0,0,0);   
@@ -74,6 +81,7 @@ body{
     overflow-y: hidden;
     transition: 0.1s ease;
     overflow:none;
+    z-index: 999;
   }
   
   .menu-container{
@@ -99,9 +107,12 @@ body{
     border-radius: 5px;   
     position: relative;     
     cursor: pointer; 
-    z-index: 999;  
+    z-index: 1;  
 }
-
+.menu-icon-fixed{
+    /* position: fixed; */
+    
+}
 .menu-icon span {
     height: 4px;
     width: 100%;
@@ -127,17 +138,17 @@ body{
 }
 
 .openmenu .line-1{   
-    background:white;
+    background:black;
     transform: translate(-50%,-50%) rotate(-45deg);
 }
 
 .openmenu .line-2{   
-    background: white;   
+    background: black;   
     transform: translate(-50%,-50%) rotate(45deg);
 }
  
 .openmenu .line-3{ 
-    background: white;   
+    background: black;   
     transform:  translate(-50%,15px);  
     width: 80%;
 }

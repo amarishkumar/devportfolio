@@ -15,22 +15,25 @@
 
 </head>
 <body>
-    <section id="header" class="container header resetpadding">
-        <div id="myNav" class="overlay">
-            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-            <div class="menu-container">           
-              <ul class="nav-list">
-                <li class="nav"><a class="nav-link" href="#">About</a></li>
-                <li class="nav"><a class="nav-link" href="#">Careers</a></li>
-                <li class="nav"><a class="nav-link" href="#">Blog</a></li>
-                <li class="nav"><a class="nav-link" href="#">Resources</a></li>
-                <li class="nav"><a class="nav-link" href="#">claims</a></li>
-                <li class="nav"><a class="nav-link" href="#">Loyalty</a></li>
-                <li class="nav"><a class="nav-link" href="#">Say Hello</a></li>          
-              </ul>
-           </div> 
-        </div>
-                                         
+     <section >
+      <div id="myNav" class="overlay">
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        <div class="menu-container">           
+          <ul class="nav-list">
+            <li class="nav"><a class="nav-link" href="#">About</a></li>
+            <li class="nav"><a class="nav-link" href="#">Careers</a></li>
+            <li class="nav"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav"><a class="nav-link" href="#">Resources</a></li>
+            <li class="nav"><a class="nav-link" href="#">claims</a></li>
+            <li class="nav"><a class="nav-link" href="#">Loyalty</a></li>
+            <li class="nav"><a class="nav-link" href="#">Say Hello</a></li>          
+          </ul>
+       </div> 
+    </div>
+            
+     </section>
+    <section id="fluid-header" class="container-fluid resetpadding  fixed-top custommrg">
+      <section id="header" class="container header  resetpadding">                            
         <div><span id="logo" class="logo">Tushar Jadhav</span></div>
           <div id="menu" class="menu">
               <div id="header-btn" class="header-btn">
@@ -54,6 +57,8 @@
 
           </div>
     </section>
+    </section>
+   
      <section  id="hero" class="container mb-5 resetpadding">
          <div class="row herorow">
                 <div class="col-md-6">
@@ -255,6 +260,7 @@
     <script>
       let expNum =document.querySelector("#exp");
       let teamNum =document.querySelector("#team");
+     
 
       let percent =document.querySelector("#percent");
       let wordplus=document.querySelector("#wordplus");
@@ -284,6 +290,7 @@
       
 
       var menu=document.getElementById("menu-icon"); 
+      var fluidHeader=document.getElementById("fluid-header"); 
      
        //let t1=gsap.timeline({paused:true,onComplete:toggel});
        let t1=gsap.timeline({paused:true});
@@ -406,10 +413,14 @@
          console.log("open menu reverse");     
           t1.reverse();          
           menu.classList.toggle("openmenu");  
+          fluidHeader.classList.toggle("shadow-sm");  
+          
         }else{                                                               
             //document.getElementById("myNav").style.width = "40%";            
             t1.play().timeScale(2);
             menu.classList.toggle("openmenu");
+          
+            fluidHeader.classList.toggle("shadow-sm");
        }       
    } 
     
