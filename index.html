@@ -193,11 +193,11 @@
                    </div>                   
                     </div>
               <div class="col-md-5">
-                <div class="row"> 
+                <div class="row animtestimonal"> 
                   <div class="col-4 "> <span id="percent" class="txtnodsp"></span><span class="percent txtnodsp">%</span><br><span class="txtexp">JOB SUCCESS UPWORK.COM</span></div>
                   <div class="col-4"> <span id="wordplus" class="txtnodsp"></span> <span class="wordplus txtnodsp">+</span><br><span class="txtexp">WORDPRESS THEMES</span></div>
                  </div>                          
-                 <div class="row mt-5">
+                 <div class="row mt-5 animtestimonal">
                   <div class="col-4"><span id="pluginplus" class="txtnodsp"></span><span class="pluginplus txtnodsp">+</span><br><span class="txtexp">WORDPRESS <br> PLUGINS</span></div>
                   <div class="col-4"><span id="mobile_app" class="txtnodsp" ></span> <br><span class="txtexp">MOBILE <br>APPS</span></div>
                  </div>
@@ -209,17 +209,17 @@
      <section id="contact" class="container contact mt-5">        
       <div class="row flex-column">
         <div class="col-md-5">
-          <h5 class="contact-heading">CONTACT</h5>
-          <p class="title">Let's work together.</p>
-          <p class="contact-pera">I am always looking for great collaborators. Let’s talk and make something great together!</p>
+          <h5 class="contact-heading animateDown">CONTACT</h5>
+          <p class="title animateDown">Let's work together.</p>
+          <p class="contact-pera animateDown">I am always looking for great collaborators. Let’s talk and make something great together!</p>
         </div>
         <div class="col">
         <div class="row">
           <div class="col-md-4">
-           <div class="btncontact btncontact-black">
+           <div class="btncontact btncontact-black animateDown">
              <i><img id="contact-whatsapp" class="social-icon" src="images/whatsapp.svg" alt=""></i><span>(91) 909 9595 959</span>
             </div>
-            <div class="btncontact btncontact-green mt-2"><a href="">HIRE ME ON UPWORK</a></div>
+            <div class="btncontact btncontact-green mt-2 animateDown"><a href="">HIRE ME ON UPWORK</a></div>
           </div>
           <div class="col-md-2 d-flex align-items-center">
             <i class="social-icon icon-p">
@@ -261,7 +261,7 @@
       let pluginplus =document.querySelector("#pluginplus");
       let mobile_app =document.querySelector("#mobile_app");
  
-
+       let reverse =false;
 
 
         gsap.from('.whatsapp',{x:-15,duration:1,delay:.2 ,ease: "back.out(8)"});
@@ -278,54 +278,36 @@
           gsap.to('.teamplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
         },scrollTrigger:'.hero-number'});
        
-     
-
-        gsap.to(percent,{innerText:100,duration:1,snap:"innerText" ,onComplete: function(){
-       
-        console.log("percent");
-           gsap.to('.percent',{opacity:1,duration:1,stagger:0.1})  
-        },scrollTrigger:'#reviewsection'});
-
-
-        gsap.to(wordplus,{innerText:110,duration:1,snap:"innerText" ,onComplete: function(){
-        
-           gsap.to('.wordplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
-        },scrollTrigger:'#reviewsection'});
-
-
-        gsap.to(pluginplus,{innerText:15,duration:1,snap:"innerText" ,onComplete: function(){
-       
-           gsap.to('.pluginplus',{opacity:1,duration:1,y:-50,stagger:0.1})  
-        },scrollTrigger:'#reviewsection'});
-
-        gsap.to(mobile_app,{innerText:8,duration:1,snap:"innerText",scrollTrigger:'#reviewsection'});
-
-
 
        let b="background:linear-gradient(to right,#ffffff 0%,#ffffff 50%,#ffffff 50%,#ffffff 100% );";
        let b2="background:linear-gradient(to right,#000000 0%,#000000 50%,#ffffff 50%,#ffffff 100% );";
-       
-       
-      //  gsap.from('.techanim',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
-     
-      //  gsap.from('.animfashion',{opacity:1,duration:1,x:-150, ease:Power0.easeNone});
-      //  gsap.from('.animwork',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});
-     
-      //  gsap.from('.animfree',{opacity:1,duration:1,x:-150, ease:Power0.easeNone});
-      //  gsap.from('.animfreedetail',{opacity:0,duration:1,y:-50, stagger:{each:0.2}});     
+      
 
       var menu=document.getElementById("menu-icon"); 
-         //var eclipse=document.getElementById("eclipse"); 
+     
+       //let t1=gsap.timeline({paused:true,onComplete:toggel});
        let t1=gsap.timeline({paused:true});
-       t1.to(".overlay",{opacity:1,duration:1,stagger:0.1,right:0});
-       t1.to(".nav",{opacity:1,duration:1,stagger:0.1,marginTop:0});
+
+       t1.to(".overlay",{opacity:1,duration:1,right:0});
+     
+       t1.to(".nav",{opacity:1,duration:1,stagger :{each :0.2},marginTop:0});
        
        let mainTechSection=gsap.timeline({
          scrollTrigger:{
-           trigger:'.mainsection'
+           trigger:'#mainsection'
          }
        });
        
+       function toggel(msg){
+         console.log("onComplete :"+msg);
+         console.log("reverse :"+reverse);
+         if(reverse){
+          console.log("reverse in side if:"+reverse);
+          menu.classList.toggle("openmenu");
+         }
+        //  
+       };
+
        mainTechSection.from('.custombg',{opacity:1,duration:0.5,backgroundPosition:'-150px 0px', ease:Power0.easeNone});
        mainTechSection.from('.skill-heading',{opacity:0,duration:1,y:-50,stagger:1});
        mainTechSection.from('.techanim',{opacity:0,duration:1,y:-50,stagger:0.2});
@@ -337,14 +319,35 @@
          }
        });
        
-      // mainTechSection.from('.custombg',{opacity:1,duration:0.5,backgroundPosition:'-150px 0px', ease:Power0.easeNone});
+       testimonial.from('.custombg2',{opacity:1,duration:0.5,backgroundPosition:'150px 0px', ease:Power0.easeNone});       
        testimonial.from('.testimonial-anim',{opacity:0,duration:1,delay:0,y:-50});
+       testimonial.from('.animtestimonal',{opacity:0,duration:1,delay:0,y:-50},'-=1');
+      
+      
+       testimonial.to(percent,{innerText:100,duration:1,snap:"innerText" ,onComplete: function(){
+          console.log("percent");
+          testimonial.to('.percent',{opacity:1,duration:1},'-=1')  
+       }},'-=1');
+       testimonial.to(wordplus,{innerText:110,duration:1,snap:"innerText" ,onComplete: function(){       
+        testimonial.to('.wordplus',{opacity:1,duration:1,y:-50},'-=1')  
+       }},'-=1');
+
+
+       testimonial.to(pluginplus,{innerText:15,duration:1,snap:"innerText" ,onComplete: function(){      
+        testimonial.to('.pluginplus',{opacity:1,duration:1,y:-50},'-=1')  
+       }},'-=1');
+
+       testimonial.to(mobile_app,{innerText:8,duration:1,snap:"innerText"},'-=1');
+
        testimonial.from('.testimonial-p',{opacity:0,duration:1,y:-50,stagger:0.2},"<50%");
        testimonial.from('.review',{opacity:0,duration:1,y:-50},"<25%");
-       testimonial.from('.testimonial-footer',{opacity:0,duration:1,y:-50},"<25%");
-       
-       
-       
+       testimonial.from('.testimonial-footer',{opacity:0,duration:1,y:-50},"<25%"); 
+
+
+     
+
+
+
        let y3=gsap.timeline({
          scrollTrigger:{
            trigger:'.animfree'
@@ -380,31 +383,36 @@
            trigger:'.contact'
          }
        });
-       animateContact.from('.contact-heading',{opacity:0,duration:1,y:-50, stagger:{each:0.2}},"-=0.2");
-       animateContact.from('#contact-whatsapp',{x:-50,duration:1,ease: "back.out(1.7)"},"-=1");
+       //animateContact.from('.contact-heading',{opacity:0,duration:1,y:-50, stagger:{each:0.2}},"-=0.2");
+       animateContact.from('.animateDown',{opacity:0,duration:1,y:-50, stagger:{each:0.2}},"-=0.2");
+      
+       animateContact.from('#contact-whatsapp',{x:-100,duration:1,ease: "back.out(1.7)"},"-=1");
        animateContact.from('.linked-in',{x:-50, duration:1},"-=1");
+      
        animateContact.from('.insta',{scale:0,duration:1},"-=1");
        animateContact.from('.git',{x:50,duration:1},"-=1");
        
 
 
-   menu.onclick=function(){
+       menu.onclick=function(){
        console.log(menu.classList);
        console.log("menu-icon"+menu.classList.contains("menu-icon"));
        //  menu.classList.toggle("openmenu");
        //  document.getElementById("myNav").style.height = "100%";
        
        if(menu.classList.contains("openmenu")){                   
-        // document.getElementById("myNav").style.width = "0%";       
-          t1.reverse();
-          menu.classList.toggle("openmenu"); 
+        // document.getElementById("myNav").style.width = "0%";
+        reverse=true;  
+         console.log("open menu reverse");     
+          t1.reverse();          
+          menu.classList.toggle("openmenu");  
         }else{                                                               
             //document.getElementById("myNav").style.width = "40%";            
-            t1.play().timeScale();
+            t1.play().timeScale(2);
             menu.classList.toggle("openmenu");
-       }
-       
-   }
+       }       
+   } 
+    
     </script>
 </body>
 </html>
